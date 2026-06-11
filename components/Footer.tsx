@@ -16,11 +16,9 @@ export default function Footer() {
           className="flex flex-col items-center justify-between gap-4 md:flex-row"
         >
           <div>
-            <p className="font-medium">
-              Eric C
-            </p>
+            <p className="font-semibold text-white">Edward Cadiz</p>
 
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-slate-500">
               © {year} All Rights Reserved
             </p>
           </div>
@@ -30,7 +28,7 @@ export default function Footer() {
               href="https://github.com/yourusername"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-muted-foreground transition hover:text-foreground"
+              className="text-sm text-slate-400 transition-colors hover:text-white"
             >
               GitHub
             </a>
@@ -39,16 +37,16 @@ export default function Footer() {
               href="https://linkedin.com/in/yourusername"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-muted-foreground transition hover:text-foreground"
+              className="text-sm text-slate-400 transition-colors hover:text-white"
             >
               LinkedIn
             </a>
 
             <a
-              href="#top"
-              className="text-sm text-muted-foreground transition hover:text-foreground"
+              href="#home"
+              className="text-sm text-slate-400 transition-colors hover:text-white"
             >
-              Back to Top
+              Back to Top ↑
             </a>
           </div>
         </motion.div>

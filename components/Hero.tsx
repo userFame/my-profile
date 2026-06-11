@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const techStack: string[] = [
   "React",
@@ -16,7 +17,8 @@ export default function Hero() {
     <section
       id="home"
       className="
-        section-padding
+        pt-32
+        pb-20
         relative
         overflow-hidden
         min-h-screen
@@ -296,14 +298,12 @@ export default function Hero() {
                   bg-slate-900
                 "
               >
-                <img
-                  src="/profile.jpg"
-                  alt="Profile"
-                  className="
-                    h-full
-                    w-full
-                    object-cover
-                  "
+                <Image
+                  src="/profile_pic.jpg"
+                  alt="Profile photo of Edward Cadiz"
+                  fill
+                  priority
+                  className="object-cover"
                 />
               </div>
             </div>

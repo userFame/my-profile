@@ -14,7 +14,7 @@ export default function Experience() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
-          className="mb-16"
+          className="mb-10"
         >
           <h2 className="text-4xl md:text-5xl font-bold">
             Work{" "}
@@ -31,7 +31,7 @@ export default function Experience() {
 
         {/* Timeline */}
 
-        <div className="space-y-10 relative">
+        <div className="space-y-8 relative">
           {/* Vertical line */}
 
           <div className="absolute left-3 top-0 bottom-0 w-[2px] bg-white/10" />

@@ -13,7 +13,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-bold mb-16"
+          className="text-4xl md:text-5xl font-bold mb-10"
         >
           About{" "}
           <span className="gradient-text">Me</span>
@@ -21,7 +21,7 @@ export default function About() {
 
         {/* Grid Layout */}
 
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* LEFT SIDE — STORY */}
 
           <motion.div

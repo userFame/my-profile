@@ -5,62 +5,63 @@ import { testimonials } from "@/data/testimonials";
 
 export default function TestimonialsSection() {
   return (
-    <section
-      id="testimonials"
-      className="section-container section-padding"
-    >
-      <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="mb-12"
-      >
-        <h2 className="text-3xl font-bold tracking-tight">
-          Testimonials
-        </h2>
+    <section id="testimonials" className="section-padding relative">
+      <div className="section-container">
+        {/* Header */}
 
-        <p className="mt-3 max-w-2xl text-muted-foreground">
-          Feedback from colleagues, managers, and collaborators.
-        </p>
-      </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+          className="mb-10"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold">
+            What People{" "}
+            <span className="gradient-text">Say</span>
+          </h2>
 
-      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-        {testimonials.map((testimonial, index) => (
-          <motion.article
-            key={testimonial.name}
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{
-              duration: 0.5,
-              delay: index * 0.1,
-            }}
-            className="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm"
-          >
-            <div className="mb-4 text-4xl leading-none text-muted-foreground/30">
-              "
-            </div>
+          <p className="text-slate-400 mt-4 max-w-2xl">
+            Feedback from colleagues, managers, and collaborators.
+          </p>
+        </motion.div>
 
-            <p className="mb-6 text-sm leading-relaxed text-muted-foreground">
-              {testimonial.quote}
-            </p>
+        {/* Grid */}
 
-            <div>
-              <p className="font-medium">
-                {testimonial.name}
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {testimonials.map((testimonial, index) => (
+            <motion.article
+              key={testimonial.name}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="glass rounded-2xl p-6 card-hover"
+            >
+              <div className="mb-4 text-4xl leading-none text-purple-400/40 font-serif">
+                "
+              </div>
+
+              <p className="mb-6 text-sm leading-relaxed text-slate-400">
+                {testimonial.quote}
               </p>
 
-              <p className="text-sm text-muted-foreground">
-                {testimonial.role}
-              </p>
+              <div>
+                <p className="font-semibold text-white">
+                  {testimonial.name}
+                </p>
 
-              <p className="text-sm text-muted-foreground">
-                {testimonial.company}
-              </p>
-            </div>
-          </motion.article>
-        ))}
+                <p className="text-sm text-cyan-400 mt-0.5">
+                  {testimonial.role}
+                </p>
+
+                <p className="text-sm text-slate-500">
+                  {testimonial.company}
+                </p>
+              </div>
+            </motion.article>
+          ))}
+        </div>
       </div>
     </section>
   );
