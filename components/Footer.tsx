@@ -25,9 +25,9 @@ const cols = [
   {
     heading: "Connect",
     links: [
-      { label: "Email",    href: "mailto:eric@example.com"               },
-      { label: "GitHub",   href: "https://github.com/yourusername"       },
-      { label: "LinkedIn", href: "https://linkedin.com/in/yourusername"  },
+      { label: "Email",    href: "mailto:cadiz.edward@gmail.com"         },
+      { label: "GitHub",   href: "https://github.com/userFame"           },
+      { label: "LinkedIn", href: "https://linkedin.com/in/edwardcadiz"   },
       { label: "Résumé",   href: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/resume.pdf`                           },
     ],
   },
