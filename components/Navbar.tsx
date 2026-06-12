@@ -58,7 +58,7 @@ export default function Navbar() {
           </nav>
 
           <a
-            href="/resume.pdf"
+            href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/resume.pdf`}
             target="_blank"
             rel="noopener noreferrer"
             className="hidden md:inline-flex text-xs font-medium uppercase tracking-widest border-b border-[#2A0E06] pb-px hover:text-[#E35336] hover:border-[#E35336] transition-colors"
@@ -86,7 +86,7 @@ export default function Navbar() {
                 {l.label}
               </button>
             ))}
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="text-sm text-[#9988A1] mt-2">
+            <a href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/resume.pdf`} target="_blank" rel="noopener noreferrer" className="text-sm text-[#9988A1] mt-2">
               Download Résumé ↗
             </a>
           </motion.div>

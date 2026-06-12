@@ -28,7 +28,7 @@ const cols = [
       { label: "Email",    href: "mailto:eric@example.com"               },
       { label: "GitHub",   href: "https://github.com/yourusername"       },
       { label: "LinkedIn", href: "https://linkedin.com/in/yourusername"  },
-      { label: "Résumé",   href: "/resume.pdf"                           },
+      { label: "Résumé",   href: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/resume.pdf`                           },
     ],
   },
 ];

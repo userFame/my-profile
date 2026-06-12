@@ -44,7 +44,7 @@ export default function Hero() {
             {/* Mobile photo — shown only below lg */}
             <div className="relative mt-8 mb-8 h-[280px] sm:h-[340px] w-full overflow-hidden bg-[#FFD3AC] lg:hidden rounded-sm">
               <Image
-                src="/profile.jpg"
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/profile_pic.jpg`}
                 alt="Edward Cadiz — Full Stack Developer"
                 fill
                 priority
@@ -111,7 +111,7 @@ export default function Hero() {
           className="relative hidden lg:block bg-[#FFD3AC] overflow-hidden"
         >
           <Image
-            src="/profile.jpg"
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/profile_pic.jpg`}
             alt="Edward Cadiz — Full Stack Developer"
             fill
             priority
