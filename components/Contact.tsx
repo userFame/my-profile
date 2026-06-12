@@ -1,54 +1,58 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 
-export default function ContactSection() {
+const links = [
+  { label: "Email",    href: "mailto:eric@example.com",             external: false },
+  { label: "GitHub",   href: "https://github.com/yourusername",     external: true  },
+  { label: "LinkedIn", href: "https://linkedin.com/in/yourusername", external: true  },
+];
+
+export default function Contact() {
   return (
-    <section id="contact" className="section-padding relative">
-      <div className="section-container">
+    <section id="contact" className="rule bg-[#1C1917] text-[#F5F0E8]">
+      <div className="wrap py-16 sm:py-24 md:py-32">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mx-auto max-w-3xl text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold">
-            Let's Build Something{" "}
-            <span className="gradient-text">Great</span>
-          </h2>
-
-          <p className="mt-4 text-slate-400 max-w-xl mx-auto leading-relaxed">
-            I'm always interested in discussing new opportunities,
-            collaborating on projects, or simply connecting with other
-            developers.
+          <p className="text-[11px] uppercase tracking-[0.2em] text-[#78716C] mb-6 sm:mb-8">
+            Get in touch
           </p>
 
-          <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <a
-              href="mailto:eric@example.com"
-              className="glass rounded-xl px-6 py-3 font-medium transition-all duration-300 hover:-translate-y-1 hover:border-white/20"
-            >
-              Email Me
-            </a>
+          <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight mb-8 sm:mb-10 max-w-4xl">
+            Have a project
+            <br />
+            <span className="font-extralight italic text-[#8B7355]">
+              in mind?
+            </span>
+          </h2>
 
-            <a
-              href="https://github.com/yourusername"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="glass rounded-xl px-6 py-3 font-medium transition-all duration-300 hover:-translate-y-1 hover:border-white/20"
-            >
-              GitHub
-            </a>
+          <p className="text-[#78716C] text-base leading-relaxed max-w-lg mb-10 sm:mb-14">
+            I&apos;m currently open to new opportunities — freelance builds,
+            contract roles, or full-time positions. If you&apos;re building
+            something interesting, let&apos;s talk.
+          </p>
 
-            <a
-              href="https://linkedin.com/in/yourusername"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-xl bg-gradient-to-r from-purple-600 to-cyan-500 px-6 py-3 font-semibold text-white transition hover:scale-105"
-            >
-              LinkedIn
-            </a>
+          <div className="divide-y divide-[#78716C]/20 max-w-xs sm:max-w-sm">
+            {links.map((l) => (
+              <a
+                key={l.label}
+                href={l.href}
+                target={l.external ? "_blank" : undefined}
+                rel={l.external ? "noopener noreferrer" : undefined}
+                className="group flex items-center justify-between py-4 sm:py-5 hover:text-[#8B7355] transition-colors"
+              >
+                <span className="text-base sm:text-lg font-semibold">{l.label}</span>
+                <ArrowUpRight
+                  size={18}
+                  className="text-[#78716C] group-hover:text-[#8B7355] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                />
+              </a>
+            ))}
           </div>
         </motion.div>
       </div>

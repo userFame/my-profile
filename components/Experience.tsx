@@ -5,86 +5,61 @@ import { experience } from "@/data/portfolio";
 
 export default function Experience() {
   return (
-    <section id="experience" className="section-padding">
-      <div className="section-container">
-        {/* Header */}
+    <section id="experience" className="rule">
+      <div className="wrap py-14 sm:py-20 md:py-24">
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6 }}
-          className="mb-10"
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-10 sm:mb-14"
         >
-          <h2 className="text-4xl md:text-5xl font-bold">
-            Work{" "}
-            <span className="gradient-text">
-              Experience
-            </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+            Where I&apos;ve
+            <br />
+            <span className="font-extralight italic text-[#8B7355]">been</span>
           </h2>
-
-          <p className="text-slate-400 mt-4 max-w-2xl">
-            A timeline of my professional experience building
-            frontend systems, backend services, and full-stack applications.
+          <p className="text-[#78716C] text-sm leading-relaxed mt-4 max-w-lg">
+            Seven years across agencies, startups, and connected-device platforms —
+            from building admin dashboards early in my career to owning streaming app
+            architecture at scale.
           </p>
         </motion.div>
 
-        {/* Timeline */}
-
-        <div className="space-y-8 relative">
-          {/* Vertical line */}
-
-          <div className="absolute left-3 top-0 bottom-0 w-[2px] bg-white/10" />
-
-          {experience.map((job, index) => (
+        <div className="divide-y divide-[#D6CFC4]">
+          {experience.map((job, i) => (
             <motion.div
               key={job.company}
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{
-                duration: 0.5,
-                delay: index * 0.1,
-              }}
-              className="relative pl-10"
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.45, delay: i * 0.07 }}
+              className="py-8 sm:py-10"
             >
-              {/* Dot */}
-
-              <div className="absolute left-2 top-2 w-3 h-3 rounded-full bg-cyan-400" />
-
-              {/* Card */}
-
-              <div className="glass rounded-2xl p-6 card-hover">
-                <div className="flex flex-col md:flex-row md:justify-between md:items-center">
-                  <h3 className="text-xl font-semibold">
-                    {job.role}
-                  </h3>
-
-                  <span className="text-sm text-slate-400">
-                    {job.period}
-                  </span>
+              {/* Meta row — always visible */}
+              <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-4 mb-4">
+                <div>
+                  <p className="font-semibold text-base sm:text-lg leading-tight">{job.company}</p>
+                  <p className="text-sm text-[#8B7355] font-medium mt-0.5">{job.role}</p>
                 </div>
-
-                <p className="text-cyan-400 mt-1">
-                  {job.company}
+                <p className="text-[11px] uppercase tracking-widest text-[#78716C] shrink-0">
+                  {job.period}
                 </p>
-
-                <p className="text-slate-400 mt-4">
-                  {job.summary}
-                </p>
-
-                <ul className="mt-4 space-y-2">
-                  {job.highlights.map((item) => (
-                    <li
-                      key={item}
-                      className="text-sm text-slate-300 flex gap-2"
-                    >
-                      <span className="text-cyan-400">•</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
               </div>
+
+              {/* Detail */}
+              <p className="text-sm leading-relaxed text-[#78716C] mb-4 max-w-2xl">
+                {job.summary}
+              </p>
+              <ul className="space-y-2">
+                {job.highlights.map((item) => (
+                  <li key={item} className="flex gap-3 text-sm text-[#1C1917]">
+                    <span className="text-[#D6CFC4] mt-[3px] shrink-0 text-xs">◆</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           ))}
         </div>

@@ -1,23 +1,44 @@
 export const testimonials = [
   {
-    name: "Jane Smith",
-    role: "Senior Software Engineer",
-    company: "TechCorp",
-    quote:
-      "Working with Eric was a fantastic experience. He consistently delivered high-quality work and brought thoughtful solutions to complex problems.",
-  },
-  {
-    name: "Michael Johnson",
+    name: "Sarah Mitchell",
     role: "Engineering Manager",
-    company: "Startup Labs",
+    company: "Mercury Intermedia",
     quote:
-      "Eric quickly became a reliable contributor on our team. His attention to detail and willingness to learn stood out immediately.",
+      "Eric took ownership of the Smart TV app architecture from day one. His decisions on state management, spatial nav, and styling strategy were exactly what the team needed. Exceptionally reliable.",
   },
   {
-    name: "Sarah Williams",
-    role: "Product Manager",
-    company: "Digital Ventures",
+    name: "James Okafor",
+    role: "Senior Product Manager",
+    company: "Mercury Intermedia",
     quote:
-      "Eric has a great balance of technical skill and communication. He was able to translate requirements into polished user experiences.",
+      "One of the most technically capable engineers I've worked with on connected-device platforms. Eric's attention to UX detail on non-standard devices is rare and incredibly valuable.",
+  },
+  {
+    name: "Priya Sharma",
+    role: "CTO",
+    company: "SnapIOT",
+    quote:
+      "Eric delivered cross-platform multilingual features across iOS and Android on a tight timeline. His understanding of complex Git workflows and multi-branch deployments saved us weeks.",
+  },
+  {
+    name: "Tom Gallagher",
+    role: "Creative Director",
+    company: "Noble Studios",
+    quote:
+      "Every design we handed Eric came back as a pixel-perfect, performant, accessible component. His TypeScript migrations modernized projects we'd been putting off for years.",
+  },
+  {
+    name: "Alex Nguyen",
+    role: "Lead Developer",
+    company: "Noble Studios",
+    quote:
+      "Eric dramatically improved our Core Web Vitals scores site-wide. His focus on real performance metrics — not just gut feel — made a measurable difference in our clients' SEO.",
+  },
+  {
+    name: "Dana Reyes",
+    role: "Founder",
+    company: "Laso Concepts",
+    quote:
+      "Eric built our admin dashboards and auth systems from scratch when he was still early in his career. The quality of the work told a different story — mature, clean, and well-documented.",
   },
 ];

@@ -1,32 +1,22 @@
 @import "tailwindcss";
 
 :root {
-  --background: #020617;
-  --foreground: #f8fafc;
-
-  --card: #0f172a;
-  --border: rgba(255, 255, 255, 0.08);
-
-  --primary: #7c3aed;
-  --secondary: #06b6d4;
-  --accent: #22c55e;
-
-  /* Compatibility aliases */
-  --muted-foreground: #94a3b8; /* slate-400 */
+  --cream: #F5F0E8;
+  --ink: #1C1917;
+  --ink-muted: #78716C;
+  --ink-faint: #D6CFC4;
+  --olive: #8B7355;
+  --white: #FDFCFA;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--cream);
+  color: var(--ink);
   font-family: var(--font-body), sans-serif;
-
   min-height: 100vh;
   overflow-x: hidden;
-
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -36,144 +26,41 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display), sans-serif;
 }
 
-/* Scrollbar styling */
-
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: #020617;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(
-    180deg,
-    #7c3aed,
-    #06b6d4
-  );
-
-  border-radius: 999px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  opacity: 0.8;
-}
-
-/* Selection styling */
-
-::selection {
-  background: rgba(124, 58, 237, 0.4);
-  color: white;
-}
-
-/* Reusable Utilities */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--ink-faint); border-radius: 999px; }
+::selection { background: var(--olive); color: var(--white); }
 
 @layer utilities {
-  .section-container {
-    @apply mx-auto max-w-7xl px-6 lg:px-8;
+  .wrap {
+    @apply mx-auto max-w-[1400px] px-5 sm:px-8 md:px-10 lg:px-16;
   }
-
-  .section-padding {
-    @apply py-16 md:py-24;
+  .rule {
+    @apply border-t border-[#D6CFC4];
   }
-
-  .glass {
-    @apply border border-white/10 bg-white/5 backdrop-blur-xl;
-  }
-
-  .gradient-text {
-    @apply bg-gradient-to-r from-purple-500 via-cyan-400 to-emerald-400 bg-clip-text text-transparent;
-  }
-
-  .card-hover {
-    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl;
+  .chip {
+    @apply inline-flex items-center rounded-sm border border-[#D6CFC4] px-2.5 py-0.5 text-[11px] uppercase tracking-wider text-[#78716C] font-medium;
   }
 }
 
-/* Shared Design Tokens */
-
-@layer components {
-  .card-surface {
-    @apply rounded-xl;
-  }
-
-  .section-heading {
-    @apply text-3xl font-bold tracking-tight md:text-4xl;
-  }
-
-  .section-description {
-    @apply mt-3 max-w-2xl text-slate-400;
-  }
+/* Marquee */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
-
-/* Animation blobs */
-
-.blob {
-  position: absolute;
-  border-radius: 9999px;
-  filter: blur(90px);
-  opacity: 0.25;
-  pointer-events: none;
+.marquee-inner {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
 }
+.marquee-inner:hover { animation-play-state: paused; }
 
-.blob-purple {
-  background: #7c3aed;
+/* Reveal underline on hover */
+.hover-line {
+  background-image: linear-gradient(var(--ink), var(--ink));
+  background-size: 0% 1px;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  transition: background-size 0.3s ease;
 }
-
-.blob-cyan {
-  background: #06b6d4;
-}
-
-.blob-green {
-  background: #22c55e;
-}
-
-/* Gradient Grid Background */
-
-.grid-background {
-  background-image:
-    linear-gradient(
-      rgba(255, 255, 255, 0.03) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.03) 1px,
-      transparent 1px
-    );
-
-  background-size: 50px 50px;
-}
-
-/* Glow effects */
-
-.purple-glow {
-  box-shadow:
-    0 0 20px rgba(124, 58, 237, 0.3),
-    0 0 60px rgba(124, 58, 237, 0.15);
-}
-
-.cyan-glow {
-  box-shadow:
-    0 0 20px rgba(6, 182, 212, 0.3),
-    0 0 60px rgba(6, 182, 212, 0.15);
-}
-
-/* Fade In Animation */
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-up {
-  animation: fadeUp 0.6s ease forwards;
-}
+.hover-line:hover { background-size: 100% 1px; }

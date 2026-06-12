@@ -1,287 +1,97 @@
 "use client";
 
-import { FC, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Download, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
-interface NavLink {
-  name: string;
-  href: `#${string}`;
-}
-
-const navLinks: NavLink[] = [
-  {
-    name: "Home",
-    href: "#home",
-  },
-  {
-    name: "About",
-    href: "#about",
-  },
-  {
-    name: "Skills",
-    href: "#skills",
-  },
-  {
-    name: "Experience",
-    href: "#experience",
-  },
-  {
-    name: "Projects",
-    href: "#projects",
-  },
-  {
-    name: "Contact",
-    href: "#contact",
-  },
+const links = [
+  { label: "Work",       href: "#projects"   },
+  { label: "Services",   href: "#services"   },
+  { label: "Experience", href: "#experience" },
+  { label: "Contact",    href: "#contact"    },
 ];
 
-const Navbar: FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+export default function Navbar() {
+  const [open, setOpen]       = useState(false);
+  const [solid, setSolid]     = useState(false);
 
-  const scrollToSection = (href: NavLink["href"]): void => {
-    const section: HTMLElement | null =
-      document.querySelector<HTMLElement>(href);
+  useEffect(() => {
+    const onScroll = () => setSolid(window.scrollY > 40);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
-    if (section) {
-      section.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-
-    setIsMenuOpen(false);
-  };
-
-  const toggleMenu = (): void => {
-    setIsMenuOpen((prev: boolean) => !prev);
-  };
-
-  const closeMenu = (): void => {
-    setIsMenuOpen(false);
+  const go = (href: string) => {
+    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    setOpen(false);
   };
 
   return (
     <>
-      <motion.nav
-        initial={{
-          opacity: 0,
-          y: -80,
-        }}
-        animate={{
-          opacity: 1,
-          y: 0,
-        }}
-        transition={{
-          duration: 0.6,
-        }}
-        className="
-          fixed
-          top-5
-          left-1/2
-          z-50
-          w-[95%]
-          max-w-7xl
-          -translate-x-1/2
-          rounded-2xl
-          border
-          border-white/10
-          bg-slate-950/70
-          backdrop-blur-xl
-          shadow-2xl
-        "
+      <motion.header
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
+          solid ? "bg-[#F5F0E8]/90 backdrop-blur-sm border-b border-[#D6CFC4]" : ""
+        }`}
       >
-        <div className="flex h-16 items-center justify-between px-6">
-          {/* Logo */}
-
-          <motion.a
+        <div className="wrap flex h-[60px] items-center justify-between">
+          <a
             href="#home"
-            whileHover={{ scale: 1.05 }}
-            className="
-              bg-gradient-to-r
-              from-purple-500
-              via-cyan-400
-              to-emerald-400
-              bg-clip-text
-              text-xl
-              font-bold
-              tracking-tight
-              text-transparent
-            "
+            onClick={(e: React.MouseEvent) => { e.preventDefault(); go("#home"); }}
+            className="text-sm font-semibold tracking-tight hover-line pb-px"
           >
-            YourName.dev
-          </motion.a>
+            Eric C.
+          </a>
 
-          {/* Desktop Navigation */}
-
-          <div className="hidden items-center gap-8 lg:flex">
-            {navLinks.map((link: NavLink) => (
+          <nav className="hidden md:flex items-center gap-10">
+            {links.map((l) => (
               <button
-                key={link.href}
-                type="button"
-                onClick={() => scrollToSection(link.href)}
-                className="
-                  relative
-                  text-sm
-                  font-medium
-                  text-slate-300
-                  transition-colors
-                  duration-300
-                  hover:text-white
-                "
+                key={l.href}
+                onClick={() => go(l.href)}
+                className="text-sm text-[#78716C] hover-line pb-px hover:text-[#1C1917] transition-colors"
               >
-                {link.name}
+                {l.label}
               </button>
             ))}
+          </nav>
 
-            <motion.a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{
-                scale: 1.05,
-              }}
-              whileTap={{
-                scale: 0.95,
-              }}
-              className="
-                flex
-                items-center
-                gap-2
-                rounded-xl
-                bg-gradient-to-r
-                from-purple-600
-                to-cyan-500
-                px-5
-                py-2.5
-                text-sm
-                font-semibold
-                text-white
-                shadow-lg
-              "
-            >
-              <Download size={16} />
-              Resume
-            </motion.a>
-          </div>
-
-          {/* Mobile Menu Toggle */}
-
-          <button
-            type="button"
-            aria-label="Toggle Navigation Menu"
-            onClick={toggleMenu}
-            className="text-white lg:hidden"
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:inline-flex text-xs font-medium uppercase tracking-widest border-b border-[#1C1917] pb-px hover:text-[#8B7355] hover:border-[#8B7355] transition-colors"
           >
-            {isMenuOpen ? (
-              <X size={26} />
-            ) : (
-              <Menu size={26} />
-            )}
+            Résumé ↗
+          </a>
+
+          <button className="md:hidden" onClick={() => setOpen((p: boolean) => !p)} aria-label="Toggle menu">
+            {open ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
-      </motion.nav>
-
-      {/* Mobile Navigation */}
+      </motion.header>
 
       <AnimatePresence>
-        {isMenuOpen && (
-          <>
-            <motion.div
-              className="
-                fixed
-                inset-0
-                z-40
-                bg-black/60
-                backdrop-blur-sm
-                lg:hidden
-              "
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={closeMenu}
-            />
-
-            <motion.div
-              initial={{
-                opacity: 0,
-                y: -30,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              exit={{
-                opacity: 0,
-                y: -30,
-              }}
-              transition={{
-                duration: 0.25,
-              }}
-              className="
-                fixed
-                left-4
-                right-4
-                top-24
-                z-50
-                rounded-3xl
-                border
-                border-white/10
-                bg-slate-900/95
-                p-6
-                backdrop-blur-xl
-                lg:hidden
-              "
-            >
-              <div className="flex flex-col gap-5">
-                {navLinks.map((link: NavLink) => (
-                  <button
-                    key={link.href}
-                    type="button"
-                    onClick={() => scrollToSection(link.href)}
-                    className="
-                      text-left
-                      text-lg
-                      text-slate-300
-                      transition-colors
-                      duration-300
-                      hover:text-cyan-400
-                    "
-                  >
-                    {link.name}
-                  </button>
-                ))}
-
-                <a
-                  href="/resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="
-                    mt-3
-                    flex
-                    items-center
-                    justify-center
-                    gap-2
-                    rounded-xl
-                    bg-gradient-to-r
-                    from-purple-600
-                    to-cyan-500
-                    px-5
-                    py-3
-                    font-medium
-                    text-white
-                  "
-                >
-                  <Download size={18} />
-                  Download Resume
-                </a>
-              </div>
-            </motion.div>
-          </>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.18 }}
+            className="fixed inset-x-0 top-[60px] z-40 bg-[#F5F0E8] border-b border-[#D6CFC4] px-6 py-8 flex flex-col gap-6 md:hidden"
+          >
+            {links.map((l) => (
+              <button key={l.href} onClick={() => go(l.href)} className="text-left text-2xl font-semibold">
+                {l.label}
+              </button>
+            ))}
+            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="text-sm text-[#78716C] mt-2">
+              Download Résumé ↗
+            </a>
+          </motion.div>
         )}
       </AnimatePresence>
     </>
   );
-};
-
-export default Navbar;
+}

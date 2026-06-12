@@ -1,11 +1,15 @@
+"use client";
+
 import { resume } from "@/data/resume";
-import ProjectCard from "./ProjectCard";
 
 export default function ProjectsGrid() {
   return (
-    <div className="grid gap-6 md:grid-cols-2">
+    <div className="grid md:grid-cols-2 gap-6">
       {resume.projects.map((project) => (
-        <ProjectCard key={project.name} project={project} />
+        <div key={project.name} className="p-6 border border-[#D6CFC4] rounded-sm">
+          <h3 className="font-semibold mb-2">{project.name}</h3>
+          <p className="text-sm text-[#78716C]">{project.description}</p>
+        </div>
       ))}
     </div>
   );
