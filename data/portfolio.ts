@@ -1,68 +1,3 @@
-export interface SkillGroup {
-  title: string;
-  skills: string[];
-}
-
-export const skills: SkillGroup[] = [
-  {
-    title: "Frontend",
-    skills: [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Framer Motion",
-    ],
-  },
-  {
-    title: "Backend",
-    skills: [
-      "Node.js",
-      "Express",
-      "PostgreSQL",
-      "REST APIs",
-      "Authentication",
-    ],
-  },
-  {
-    title: "Tools & DevOps",
-    skills: [
-      "Git & GitHub",
-      "Docker",
-      "Vercel",
-      "AWS Basics",
-      "CI/CD",
-    ],
-  },
-];
-
-export interface Project {
-  title: string;
-  description: string;
-  stack: string[];
-  liveUrl?: string;
-  githubUrl?: string;
-}
-
-export const projects: Project[] = [
-  {
-    title: "E-commerce Platform",
-    description:
-      "Full-stack marketplace with authentication, cart system, and Stripe payments.",
-    stack: ["Next.js", "TypeScript", "Node.js", "PostgreSQL"],
-    liveUrl: "#",
-    githubUrl: "#",
-  },
-  {
-    title: "Task Management App",
-    description:
-      "Real-time task manager with drag-and-drop UI and team collaboration.",
-    stack: ["React", "Firebase", "Tailwind"],
-    liveUrl: "#",
-    githubUrl: "#",
-  },
-];
-
 export interface Experience {
   role: string;
   company: string;
@@ -127,4 +62,3 @@ export const experience: Experience[] = [
     ],
   },
 ];
-
