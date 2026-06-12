@@ -1,18 +1,24 @@
 @import "tailwindcss";
 
+/* ── Tuscan Sunset palette ─────────────────────────────
+   Core:     #E35336 accent · #FFD3AC peach
+             #9988A1 mauve  · #8A2B0E sienna
+   Derived:  bg / ink / border / tint                    */
 :root {
-  --cream: #F5F0E8;
-  --ink: #1C1917;
-  --ink-muted: #78716C;
-  --ink-faint: #D6CFC4;
-  --olive: #8B7355;
-  --white: #FDFCFA;
+  --bg:     #FFF8F2;
+  --ink:    #2A0E06;
+  --accent: #E35336;
+  --peach:  #FFD3AC;
+  --mauve:  #9988A1;
+  --sienna: #8A2B0E;
+  --border: #EAC8B0;
+  --tint:   #FFF0E4;
 }
 
 html { scroll-behavior: smooth; }
 
 body {
-  background: var(--cream);
+  background: var(--bg);
   color: var(--ink);
   font-family: var(--font-body), sans-serif;
   min-height: 100vh;
@@ -27,19 +33,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: var(--cream); }
-::-webkit-scrollbar-thumb { background: var(--ink-faint); border-radius: 999px; }
-::selection { background: var(--olive); color: var(--white); }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--peach); border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+::selection { background: var(--accent); color: var(--bg); }
 
 @layer utilities {
   .wrap {
     @apply mx-auto max-w-[1400px] px-5 sm:px-8 md:px-10 lg:px-16;
   }
   .rule {
-    @apply border-t border-[#D6CFC4];
+    @apply border-t border-[#EAC8B0];
   }
   .chip {
-    @apply inline-flex items-center rounded-sm border border-[#D6CFC4] px-2.5 py-0.5 text-[11px] uppercase tracking-wider text-[#78716C] font-medium;
+    @apply inline-flex items-center rounded-sm border border-[#EAC8B0] px-2.5 py-0.5 text-[11px] uppercase tracking-wider text-[#9988A1] font-medium;
   }
 }
 

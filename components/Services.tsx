@@ -60,16 +60,16 @@ export default function Services() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
             What I can
             <br />
-            <span className="font-extralight italic text-[#8B7355]">do for you</span>
+            <span className="font-extralight italic text-[#E35336]">do for you</span>
           </h2>
-          <p className="text-[#78716C] text-sm leading-relaxed mt-4 max-w-lg">
+          <p className="text-[#9988A1] text-sm leading-relaxed mt-4 max-w-lg">
             From greenfield builds to legacy rescues. Whether you need a complete product
             or a specialist to fill a gap — here's where I can help.
           </p>
         </motion.div>
 
         {/* Accordion */}
-        <div className="divide-y divide-[#D6CFC4]">
+        <div className="divide-y divide-[#EAC8B0]">
           {services.map((s, i) => (
             <motion.div
               key={s.index}
@@ -83,15 +83,15 @@ export default function Services() {
                 className="w-full flex items-center justify-between py-5 sm:py-6 text-left group"
               >
                 <div className="flex items-baseline gap-4 sm:gap-6 min-w-0 pr-4">
-                  <span className="text-[11px] text-[#78716C] tabular-nums shrink-0">{s.index}</span>
+                  <span className="text-[11px] text-[#9988A1] tabular-nums shrink-0">{s.index}</span>
                   <div className="min-w-0">
-                    <span className="text-base sm:text-lg md:text-xl font-semibold group-hover:text-[#8B7355] transition-colors">
+                    <span className="text-base sm:text-lg md:text-xl font-semibold group-hover:text-[#E35336] transition-colors">
                       {s.title}
                     </span>
-                    <span className="ml-3 text-xs text-[#78716C] hidden sm:inline">{s.shortline}</span>
+                    <span className="ml-3 text-xs text-[#9988A1] hidden sm:inline">{s.shortline}</span>
                   </div>
                 </div>
-                <span className="text-[#78716C] shrink-0">
+                <span className="text-[#9988A1] shrink-0">
                   {open === i ? <Minus size={16} /> : <Plus size={16} />}
                 </span>
               </button>
@@ -106,7 +106,7 @@ export default function Services() {
                     className="overflow-hidden"
                   >
                     <div className="pl-7 sm:pl-11 pb-7 sm:pb-8 pr-2 sm:pr-8">
-                      <p className="text-sm leading-relaxed text-[#78716C] max-w-2xl mb-5">
+                      <p className="text-sm leading-relaxed text-[#9988A1] max-w-2xl mb-5">
                         {s.body}
                       </p>
                       <div className="flex flex-wrap gap-2">

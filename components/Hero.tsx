@@ -23,7 +23,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
-            className="text-[11px] uppercase tracking-[0.2em] text-[#78716C]"
+            className="text-[11px] uppercase tracking-[0.2em] text-[#9988A1]"
           >
             Alexandria, VA — Available for work
           </motion.p>
@@ -36,31 +36,31 @@ export default function Hero() {
             className="my-8 lg:my-auto"
           >
             <h1 className="text-[clamp(64px,11vw,150px)] font-extrabold leading-[0.88] tracking-tight">
-              Eric
+              Edward
               <br />
-              <span className="font-light italic text-[#8B7355]">C.</span>
+              <span className="font-light italic text-[#E35336]">C.</span>
             </h1>
 
             {/* Mobile photo — shown only below lg */}
-            <div className="relative mt-8 mb-8 h-[280px] sm:h-[340px] w-full overflow-hidden bg-[#E8E0D0] lg:hidden rounded-sm">
+            <div className="relative mt-8 mb-8 h-[280px] sm:h-[340px] w-full overflow-hidden bg-[#FFD3AC] lg:hidden rounded-sm">
               <Image
                 src="/profile.jpg"
-                alt="Eric C — Full Stack Developer"
+                alt="Edward Cadiz — Full Stack Developer"
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 500px"
                 className="object-cover object-top"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1C1917]/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#2A0E06]/20 to-transparent" />
               <div className="absolute bottom-4 left-4">
-                <div className="inline-flex items-center gap-2 bg-[#F5F0E8]/85 backdrop-blur-sm rounded-sm px-3 py-1.5 text-xs font-medium">
-                  <span className="inline-block h-1.5 w-1.5 rounded-full bg-[#8B7355]" />
+                <div className="inline-flex items-center gap-2 bg-[#FFF8F2]/85 backdrop-blur-sm rounded-sm px-3 py-1.5 text-xs font-medium">
+                  <span className="inline-block h-1.5 w-1.5 rounded-full bg-[#E35336]" />
                   Full Stack Developer
                 </div>
               </div>
             </div>
 
-            <p className="max-w-md text-[15px] leading-[1.75] text-[#78716C]">
+            <p className="max-w-md text-[15px] leading-[1.75] text-[#9988A1]">
               Full-stack developer crafting fast, thoughtful web experiences —
               from backend APIs to pixel-perfect UIs. 7 years across
               agencies, startups, and connected-device platforms.
@@ -71,12 +71,12 @@ export default function Hero() {
                 onClick={() => document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" })}
                 className="group flex items-center gap-2 text-sm font-medium"
               >
-                <span className="inline-block h-px w-10 bg-[#1C1917] transition-all duration-300 group-hover:w-16" />
+                <span className="inline-block h-px w-10 bg-[#2A0E06] transition-all duration-300 group-hover:w-16" />
                 View Work
               </button>
               <button
                 onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
-                className="text-sm text-[#78716C] hover-line pb-px hover:text-[#1C1917] transition-colors"
+                className="text-sm text-[#9988A1] hover-line pb-px hover:text-[#2A0E06] transition-colors"
               >
                 Get in touch
               </button>
@@ -88,7 +88,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.6 }}
-            className="flex gap-8 sm:gap-12 pt-8 rule"
+            className="flex flex-wrap gap-x-8 gap-y-4 sm:gap-x-12 pt-8 rule"
           >
             {[
               { n: "7+",  label: "Years exp."  },
@@ -97,7 +97,7 @@ export default function Hero() {
             ].map(({ n, label }) => (
               <div key={label}>
                 <p className="text-2xl sm:text-3xl font-bold">{n}</p>
-                <p className="text-[11px] text-[#78716C] uppercase tracking-wider mt-0.5">{label}</p>
+                <p className="text-[11px] text-[#9988A1] uppercase tracking-wider mt-0.5">{label}</p>
               </div>
             ))}
           </motion.div>
@@ -108,20 +108,20 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 1.04 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="relative hidden lg:block bg-[#E8E0D0] overflow-hidden"
+          className="relative hidden lg:block bg-[#FFD3AC] overflow-hidden"
         >
           <Image
             src="/profile.jpg"
-            alt="Eric C — Full Stack Developer"
+            alt="Edward Cadiz — Full Stack Developer"
             fill
             priority
             sizes="500px"
             className="object-cover object-top"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#1C1917]/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#2A0E06]/30 to-transparent" />
           <div className="absolute bottom-8 left-8 right-8">
-            <div className="inline-flex items-center gap-2 bg-[#F5F0E8]/80 backdrop-blur-sm rounded-sm px-4 py-2 text-xs font-medium">
-              <span className="inline-block h-2 w-2 rounded-full bg-[#8B7355]" />
+            <div className="inline-flex items-center gap-2 bg-[#FFF8F2]/80 backdrop-blur-sm rounded-sm px-4 py-2 text-xs font-medium">
+              <span className="inline-block h-2 w-2 rounded-full bg-[#E35336]" />
               Full Stack Developer
             </div>
           </div>
@@ -132,9 +132,9 @@ export default function Hero() {
       <div className="rule overflow-hidden py-3">
         <div className="marquee-inner">
           {[...marqueeItems, ...marqueeItems].map((item, i) => (
-            <span key={i} className="mx-6 sm:mx-8 text-[11px] uppercase tracking-[0.15em] text-[#78716C] whitespace-nowrap">
+            <span key={i} className="mx-6 sm:mx-8 text-[11px] uppercase tracking-[0.15em] text-[#9988A1] whitespace-nowrap">
               {item}
-              <span className="ml-6 sm:ml-8 text-[#D6CFC4]">✦</span>
+              <span className="ml-6 sm:ml-8 text-[#FFD3AC]">✦</span>
             </span>
           ))}
         </div>

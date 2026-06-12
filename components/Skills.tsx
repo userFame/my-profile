@@ -36,16 +36,16 @@ export default function Skills() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
             Tools of
             <br />
-            <span className="font-extralight italic text-[#8B7355]">the trade</span>
+            <span className="font-extralight italic text-[#E35336]">the trade</span>
           </h2>
-          <p className="text-[#78716C] text-sm leading-relaxed mt-4 max-w-lg">
+          <p className="text-[#9988A1] text-sm leading-relaxed mt-4 max-w-lg">
             Technologies I reach for daily — chosen for reliability,
             developer experience, and real-world performance.
           </p>
         </motion.div>
 
         {/* Capability grid: 1 col → 2 col → 3 col → 4 col */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-px bg-[#D6CFC4] mb-12 sm:mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-px bg-[#EAC8B0] mb-12 sm:mb-16">
           {capabilities.map((cap, i) => (
             <motion.div
               key={cap}
@@ -53,9 +53,9 @@ export default function Skills() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.04 }}
-              className="bg-[#F5F0E8] p-5 sm:p-6 hover:bg-[#EDE8DF] transition-colors"
+              className="bg-[#FFF8F2] p-5 sm:p-6 hover:bg-[#FFF0E4] transition-colors"
             >
-              <span className="text-[11px] text-[#78716C] uppercase tracking-widest block mb-2.5">
+              <span className="text-[11px] text-[#9988A1] uppercase tracking-widest block mb-2.5">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <p className="text-sm font-medium leading-snug">{cap}</p>
@@ -64,16 +64,16 @@ export default function Skills() {
         </div>
 
         {/* Tools marquee — bleed to edges */}
-        <div className="border-t border-b border-[#D6CFC4] py-4 sm:py-5 -mx-5 sm:-mx-8 md:-mx-10 lg:-mx-16 px-5 sm:px-8 md:px-10 lg:px-16 overflow-hidden">
-          <p className="text-[11px] uppercase tracking-widest text-[#78716C] mb-3.5">
+        <div className="border-t border-b border-[#EAC8B0] py-4 sm:py-5 -mx-5 sm:-mx-8 md:-mx-10 lg:-mx-16 px-5 sm:px-8 md:px-10 lg:px-16 overflow-hidden">
+          <p className="text-[11px] uppercase tracking-widest text-[#9988A1] mb-3.5">
             Libraries &amp; Tools
           </p>
           <div className="overflow-hidden">
             <div className="marquee-inner">
               {marqueeItems.map((t, i) => (
-                <span key={i} className="mx-6 sm:mx-7 text-sm font-medium text-[#1C1917] whitespace-nowrap">
+                <span key={i} className="mx-6 sm:mx-7 text-sm font-medium text-[#2A0E06] whitespace-nowrap">
                   {t}
-                  <span className="ml-6 sm:ml-7 text-[#D6CFC4]">·</span>
+                  <span className="ml-6 sm:ml-7 text-[#FFD3AC]">·</span>
                 </span>
               ))}
             </div>

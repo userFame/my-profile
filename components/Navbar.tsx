@@ -33,7 +33,7 @@ export default function Navbar() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
         className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-          solid ? "bg-[#F5F0E8]/90 backdrop-blur-sm border-b border-[#D6CFC4]" : ""
+          solid ? "bg-[#FFF8F2]/90 backdrop-blur-sm border-b border-[#EAC8B0]" : ""
         }`}
       >
         <div className="wrap flex h-[60px] items-center justify-between">
@@ -42,7 +42,7 @@ export default function Navbar() {
             onClick={(e: React.MouseEvent) => { e.preventDefault(); go("#home"); }}
             className="text-sm font-semibold tracking-tight hover-line pb-px"
           >
-            Eric C.
+            Edward Cadiz.
           </a>
 
           <nav className="hidden md:flex items-center gap-10">
@@ -50,7 +50,7 @@ export default function Navbar() {
               <button
                 key={l.href}
                 onClick={() => go(l.href)}
-                className="text-sm text-[#78716C] hover-line pb-px hover:text-[#1C1917] transition-colors"
+                className="text-sm text-[#9988A1] hover-line pb-px hover:text-[#2A0E06] transition-colors"
               >
                 {l.label}
               </button>
@@ -61,7 +61,7 @@ export default function Navbar() {
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden md:inline-flex text-xs font-medium uppercase tracking-widest border-b border-[#1C1917] pb-px hover:text-[#8B7355] hover:border-[#8B7355] transition-colors"
+            className="hidden md:inline-flex text-xs font-medium uppercase tracking-widest border-b border-[#2A0E06] pb-px hover:text-[#E35336] hover:border-[#E35336] transition-colors"
           >
             Résumé ↗
           </a>
@@ -79,14 +79,14 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.18 }}
-            className="fixed inset-x-0 top-[60px] z-40 bg-[#F5F0E8] border-b border-[#D6CFC4] px-6 py-8 flex flex-col gap-6 md:hidden"
+            className="fixed inset-x-0 top-[60px] z-40 bg-[#FFF8F2] border-b border-[#EAC8B0] px-6 py-8 flex flex-col gap-6 md:hidden"
           >
             {links.map((l) => (
               <button key={l.href} onClick={() => go(l.href)} className="text-left text-2xl font-semibold">
                 {l.label}
               </button>
             ))}
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="text-sm text-[#78716C] mt-2">
+            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="text-sm text-[#9988A1] mt-2">
               Download Résumé ↗
             </a>
           </motion.div>
