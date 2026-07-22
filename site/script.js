@@ -37,7 +37,7 @@ portraitFlip?.addEventListener("click", () => {
     "aria-label",
     nextState
       ? "Show Edward Cadiz's portrait"
-      : "Show QR code for Edward Cadiz's GitHub profile",
+      : "Show QR code for Edward Cadiz's portfolio",
   );
   front?.setAttribute("aria-hidden", String(nextState));
   back?.setAttribute("aria-hidden", String(!nextState));
