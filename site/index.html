@@ -32,7 +32,20 @@
     <section class="hero" id="top">
       <div class="hero-kicker"><span class="status-dot"></span> Alexandria, VA · Available for select work</div>
       <h1>Making complicated<br><em>feel obvious.</em></h1>
-      <figure class="hero-portrait"><div class="portrait-frame"><picture><source srcset="assets/portrait.avif" type="image/avif"><source srcset="assets/portrait.webp" type="image/webp"><img src="assets/portrait.jpg" width="900" height="900" alt="Edward Cadiz" fetchpriority="high"></picture></div></figure>
+      <figure class="hero-portrait">
+        <button class="portrait-flip" type="button" aria-pressed="false" aria-label="Show QR code for Edward Cadiz's GitHub profile">
+          <span class="portrait-flip-inner">
+            <span class="portrait-face portrait-front">
+              <picture><source srcset="assets/portrait.avif" type="image/avif"><source srcset="assets/portrait.webp" type="image/webp"><img src="assets/portrait.jpg" width="900" height="900" alt="Edward Cadiz" fetchpriority="high"></picture>
+              <span class="portrait-cue" aria-hidden="true">Tap to share <b>↻</b></span>
+            </span>
+            <span class="portrait-face portrait-back" aria-hidden="true">
+              <img src="assets/github-profile-qr.svg" width="900" height="900" alt="">
+              <span><strong>GitHub profile</strong><small>Scan to open @userFame</small></span>
+            </span>
+          </span>
+        </button>
+      </figure>
       <div class="hero-bottom">
         <p>I’m Eddie, a product-minded full-stack developer. I turn rough ideas into clear, useful web products—from the first user flow to the working system behind it.</p>
         <a class="round-link" href="#noet" aria-label="See the Noet case study">See the work <span>↓</span></a>

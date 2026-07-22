@@ -23,3 +23,22 @@ document.querySelectorAll(".view-button").forEach((button) => {
 });
 
 document.querySelector("#year").textContent = new Date().getFullYear();
+
+const portraitFlip = document.querySelector(".portrait-flip");
+
+portraitFlip?.addEventListener("click", () => {
+  const isShowingQr = portraitFlip.getAttribute("aria-pressed") === "true";
+  const nextState = !isShowingQr;
+  const front = portraitFlip.querySelector(".portrait-front");
+  const back = portraitFlip.querySelector(".portrait-back");
+
+  portraitFlip.setAttribute("aria-pressed", String(nextState));
+  portraitFlip.setAttribute(
+    "aria-label",
+    nextState
+      ? "Show Edward Cadiz's portrait"
+      : "Show QR code for Edward Cadiz's GitHub profile",
+  );
+  front?.setAttribute("aria-hidden", String(nextState));
+  back?.setAttribute("aria-hidden", String(!nextState));
+});

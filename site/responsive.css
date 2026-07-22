@@ -78,7 +78,8 @@ body {
   }
 
   .round-link {
-    margin: 2rem 0 0 auto;
+    margin: 2rem auto 0;
+    text-align: center;
   }
 
   .working-line {
